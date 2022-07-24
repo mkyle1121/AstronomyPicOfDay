@@ -1,0 +1,107 @@
+﻿<Window x:Class="APOD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:APOD"
+        mc:Ignorable="d"
+        xmlns:vm="clr-namespace:APOD.ViewModel"
+        Title="NASA Astronomy Picture Of The Day"
+        Height="900" Width="600" 
+        Background="Transparent"        
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        WindowStyle="None">
+
+    <Window.Resources>
+        <vm:WindowVM x:Key="vm"/>
+    </Window.Resources>
+
+    <Border CornerRadius="25"
+            BorderThickness="3"
+            BorderBrush="Black"
+            Background="#5576ab"
+            MouseDown="Border_MouseDown">
+    
+    <Grid Margin="3" DataContext="{StaticResource vm}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+                
+            <StackPanel Grid.Row="0">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>                 
+
+                    <Label Content="NASA Astronomy Picture Of The Day" 
+                           Grid.Column="0"
+                           HorizontalAlignment="Center"
+                           FontWeight="Medium"
+                           FontSize="16"/>
+
+                    <StackPanel Grid.Column="1"
+                                HorizontalAlignment="Right">
+
+                        <Button Content="X"
+                            Width="30"
+                            Height="30"
+                            x:Name="XButton"
+                            Click="XButton_Click"
+                                Margin="0 0 15 0"/>
+                    </StackPanel>
+
+                </Grid>
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="1"             
+                Orientation="Horizontal" 
+                HorizontalAlignment="Center"
+                Margin="3">
+                <Label Content="Date: "
+                       FontWeight="Medium"
+                       Margin="3"/>
+                <TextBox
+                        Width="100"      
+                        TextAlignment="Center"
+                        BorderThickness="2"                     
+                        Text="{Binding Date, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.InputBindings>
+                        <KeyBinding Key="Enter"
+                                    Command="{Binding GetPictureCommand}"/>
+                    </TextBox.InputBindings>
+                </TextBox>
+            
+                <Button Content="Get Picture!"
+                        BorderThickness="2"
+                        BorderBrush="Black"
+                        Width="100" 
+                        Command="{Binding GetPictureCommand}"                    
+                        Background="White"
+                        FontWeight="Medium"
+                        Margin="3"/>            
+            </StackPanel>
+
+        <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="3">
+            <Border BorderBrush="Black" BorderThickness="3">
+                <Image Source="{Binding BitmapImage}"/>
+            </Border>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="3" Margin="3">
+            <TextBox HorizontalContentAlignment="Center" Text="{Binding Apod.Title, UpdateSourceTrigger=PropertyChanged}"/>       
+            <TextBox Text="{Binding Apod.Explanation, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Text="{Binding Apod.Url, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        
+    </Grid>
+
+    </Border>
+</Window>
