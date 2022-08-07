@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mkyle\\source\\repos\\WPFScratch\\APOD\\APOD\\APOD.csproj": {}
+    "C:\\Users\\mkyle\\source\\repos\\AstronomyPicOfDay\\APOD\\APOD\\APOD.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mkyle\\source\\repos\\WPFScratch\\APOD\\APOD\\APOD.csproj": {
+    "C:\\Users\\mkyle\\source\\repos\\AstronomyPicOfDay\\APOD\\APOD\\APOD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mkyle\\source\\repos\\WPFScratch\\APOD\\APOD\\APOD.csproj",
+        "projectUniqueName": "C:\\Users\\mkyle\\source\\repos\\AstronomyPicOfDay\\APOD\\APOD\\APOD.csproj",
         "projectName": "APOD",
-        "projectPath": "C:\\Users\\mkyle\\source\\repos\\WPFScratch\\APOD\\APOD\\APOD.csproj",
+        "projectPath": "C:\\Users\\mkyle\\source\\repos\\AstronomyPicOfDay\\APOD\\APOD\\APOD.csproj",
         "packagesPath": "C:\\Users\\mkyle\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mkyle\\source\\repos\\WPFScratch\\APOD\\APOD\\obj\\",
+        "outputPath": "C:\\Users\\mkyle\\source\\repos\\AstronomyPicOfDay\\APOD\\APOD\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mkyle\\AppData\\Roaming\\NuGet\\NuGet.Config",
